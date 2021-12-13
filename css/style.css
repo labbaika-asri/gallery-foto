@@ -1,0 +1,64 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url("../fonts/bebasneue-regular-webfont.woff2");
+}
+
+/* Style Utamas */
+body {
+    font: 25px/50px "BebasNeue", "Arial Narrow", Arial, Helvetica, sans-serif;
+    background-color: #ddd;
+}
+
+h1 {
+    font-size: 80px;
+    margin: 50px 0;
+    text-align: center;
+    text-shadow: 1px 1px 1px white;
+}
+
+.container {
+    width: 760px;
+    background-color: snow;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.gallery li,
+.gallery li img,
+.gallery li span {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+.gallery li {
+    border: 5px solid #666;
+    float: left;
+    margin-right: 10px;
+    position: relative;
+}
+
+.gallery li span {
+    display: block;
+    background-color: rgba(200, 200, 200, 0.5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 170px;
+    color: #333;
+    text-shadow: 1px 1px 1px #ddd;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+}
+
+.clear {
+    clear: both;
+}
