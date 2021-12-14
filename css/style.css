@@ -26,7 +26,7 @@ h1 {
 }
 
 .gallery li,
-.gallery li img,
+.gallery li a img,
 .gallery li span {
     width: 170px;
     height: 170px;
@@ -61,4 +61,77 @@ h1 {
 
 .clear {
     clear: both;
+}
+
+/* Overlay */
+.overlay {
+    padding: 100px 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: 0.8s;
+    text-align: center;
+}
+
+.overlay:target {
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    width: auto;
+    height: auto;
+}
+
+.overlay:target img {
+    animation: zoomAndFade 1s;
+}
+
+.overlay img {
+    max-height: 100%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}
+
+.overlay .close {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%);
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    line-height: 16px;
+    padding: 5px;
+    opacity: 0;
+}
+
+.overlay:target .close {
+    animation: slideDownFade 0.5s 0.5s forwards;
+}
+
+/* Animasi */
+@keyframes zoomAndFade {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDownFade {
+    0% {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
 }
